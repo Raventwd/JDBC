@@ -3,9 +3,9 @@ import java.util.List;
 
 public interface EmployeeDAO {
 
-    void createEmployee();
-    Employee getEmployeeById() throws SQLException;
-    List<Employee> getAllEmployees();
-    void updateEmployee();
-    void deleteEmployee();
+    void createEmployee(String name, String surname, String gender, int age, int cityId) throws SQLException;
+    void getEmployeeById(int id);
+    void getAllEmployees();
+    void updateEmployee(String name, String surname, String gender, int age, int cityId, int id);
+    void deleteEmployee(int id);
 }
