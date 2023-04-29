@@ -1,3 +1,5 @@
+package Hibernate;
+
 import java.sql.*;
 
 public class City {
