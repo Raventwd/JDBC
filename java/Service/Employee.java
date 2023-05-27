@@ -25,6 +25,18 @@ public class Employee {
     private String gender;
     @Column(name = "age")
     private int age;
-    @Column(name = "city_id")
-    private int city_id;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST) //Поля будут загружаться во время обращения
+    @JoinColumn(name = "city_id")
+    private City city;
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", city=" + city.getCity_name() +
+                '}';
+    }
 }
